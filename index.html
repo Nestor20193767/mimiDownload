@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -115,7 +116,7 @@
     }
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.5; transform: scale(1.5); }
+      50%      { opacity: 0.5; transform: scale(1.5); }
     }
 
     h1 {
@@ -149,7 +150,7 @@
     }
 
     .btn {
-      display: inline-flex; align-items: center; gap: 0.6rem;
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
       padding: 0.85rem 2rem;
       border-radius: 999px;
       font-family: 'DM Sans', sans-serif;
@@ -201,11 +202,11 @@
     }
     @keyframes orbFloat {
       0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(-14px); }
+      50%      { transform: translateY(-14px); }
     }
     @keyframes orbRing {
       0%, 100% { transform: scale(1); opacity: 1; }
-      50%       { transform: scale(1.05); opacity: 0.6; }
+      50%      { transform: scale(1.05); opacity: 0.6; }
     }
     /* blinking eyes */
     .mimi-eye { animation: blink 4s ease-in-out infinite; }
@@ -326,6 +327,47 @@
     }
     .step-body p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
 
+    /* ── CONTACT ── */
+    .contact-section {
+      padding: 5rem 2rem 8rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .contact-box {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(12, 15, 26, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 3rem 2rem;
+      backdrop-filter: blur(10px);
+    }
+    .contact-box h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .contact-box p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    .contact-email {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.1rem;
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.1);
+      padding: 0.8rem 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      border: 1px dashed rgba(56, 189, 248, 0.3);
+      user-select: all;
+    }
+
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
@@ -348,6 +390,7 @@
       .features, .steps { padding: 4rem 1.5rem; }
       footer { flex-direction: column; gap: 0.8rem; text-align: center; padding: 2rem 1.5rem; }
       .download-box { padding: 2.5rem 1.5rem; }
+      .contact-box { padding: 2.5rem 1.5rem; }
     }
   </style>
 </head>
@@ -357,20 +400,19 @@
   <div class="blob blob2"></div>
   <div class="blob blob3"></div>
 
-  <!-- NAV -->
   <nav>
     <div class="logo">Mimi</div>
     <div class="nav-links">
       <a href="#features">Características</a>
       <a href="#download">Descargar</a>
       <a href="#start">Primeros pasos</a>
+      <a href="#contact">Contacto</a>
     </div>
     <a href="https://github.com/Nestor20193767/mimiDownload/releases/download/v1.0.0/Mimi.zip" class="btn btn-primary" style="padding:0.55rem 1.4rem; font-size:0.85rem;">
       Descargar gratis
     </a>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="badge"><span class="badge-dot"></span> IA · Voz · Gemini 2.5</div>
     <h1>
@@ -404,28 +446,21 @@
             <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
           </radialGradient>
         </defs>
-        <!-- outer glow -->
         <circle cx="100" cy="100" r="96" fill="url(#glowGrad)"/>
-        <!-- body — bright blue -->
         <circle cx="100" cy="100" r="78" fill="url(#bodyGrad)"/>
-        <!-- subtle top-left shine -->
         <ellipse cx="70" cy="66" rx="18" ry="11" fill="white" opacity="0.22" transform="rotate(-25,70,66)"/>
-        <!-- left eye -->
         <g class="mimi-eye" style="transform-origin:76px 108px">
           <ellipse cx="76" cy="108" rx="9" ry="11" fill="#0a1628"/>
         </g>
-        <!-- right eye -->
         <g class="mimi-eye right" style="transform-origin:124px 108px">
           <ellipse cx="124" cy="108" rx="9" ry="11" fill="#0a1628"/>
         </g>
-        <!-- tiny white shine in each eye -->
         <circle cx="80" cy="104" r="2.8" fill="white" opacity="0.75"/>
         <circle cx="128" cy="104" r="2.8" fill="white" opacity="0.75"/>
       </svg>
     </div>
   </section>
 
-  <!-- FEATURES -->
   <section class="features" id="features">
     <div class="section-label">¿Qué puede hacer?</div>
     <h2 class="section-title">Construida para ser<br>tu mejor aliada</h2>
@@ -463,7 +498,6 @@
     </div>
   </section>
 
-  <!-- DOWNLOAD -->
   <section class="download-section" id="download">
     <div class="download-box">
       <div class="version-tag">v1.0.0 · Windows 10/11</div>
@@ -471,7 +505,6 @@
       <p>
         Un solo archivo ejecutable. Sin instaladores complicados. Descomprime y abre <strong>Mimi.exe</strong>.
       </p>
-      <!-- 🔁 REEMPLAZA el href con el link real de tu release en GitHub -->
       <a href="https://github.com/Nestor20193767/mimiDownload/releases/download/v1.0.0/Mimi.zip"
          class="btn btn-primary" style="font-size:1.05rem; padding:1rem 2.5rem;">
         ⬇ Descargar Mimi.zip
@@ -482,7 +515,6 @@
     </div>
   </section>
 
-  <!-- STEPS -->
   <section class="steps" id="start">
     <div class="section-label">Primeros pasos</div>
     <h2 class="section-title" style="margin-bottom:2.5rem;">En 3 minutos<br>ya estás hablando</h2>
@@ -510,7 +542,6 @@
     </div>
   </section>
 
-  <!-- CONFIG SECTION -->
   <section style="padding:5rem 2rem 6rem; position:relative; z-index:1;">
     <div style="max-width:700px; margin:0 auto; text-align:center;">
       <div class="section-label">Personalización</div>
@@ -561,7 +592,23 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <section class="contact-section" id="contact">
+    <div class="contact-box">
+      <h2>¿Tienes comentarios sobre Mimi?</h2>
+      <p>Me encantaría escuchar tus ideas, sugerencias o si encontraste algún problema usando a Mimi. ¡Tu feedback ayuda a mejorar el proyecto!</p>
+      
+      <div class="contact-email">
+        nestormanueheredia@gmail.com
+      </div>
+      
+      <div>
+        <a href="mailto:nestormanueheredia@gmail.com?subject=Comentarios%20sobre%20Mimi&body=Hola%20Nestor,%0A%0ATengo%20los%20siguientes%20comentarios%20sobre%20Mimi:%0A" class="btn btn-primary">
+          ✉️ Enviar correo
+        </a>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div>Hecho con 💙 · Mimi v1.0</div>
     <div>Powered by Gemini · edge-tts · PyQt6</div>
@@ -569,3 +616,4 @@
 
 </body>
 </html>
+
